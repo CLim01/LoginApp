@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -230,7 +231,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKv-Fw-Yyh">
-                                <rect key="frame" x="172" y="422" width="70" height="36"/>
+                                <rect key="frame" x="172" y="452" width="70" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="로그아웃">
@@ -240,19 +241,34 @@
                                     <action selector="tapLogoutButton:" destination="4HR-9l-qMY" eventType="touchUpInside" id="qm4-Za-67m"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Iz-td-5fX">
+                                <rect key="frame" x="166" y="402" width="82" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="비밀번호 변경">
+                                    <color key="titleColor" name="AccentColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapEditPasswordButton:" destination="4HR-9l-qMY" eventType="touchUpInside" id="o4G-wr-9lY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZnG-La-4qc"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6Iz-td-5fX" firstAttribute="centerX" secondItem="ZnG-La-4qc" secondAttribute="centerX" id="4LP-Gy-SxR"/>
                             <constraint firstItem="kgY-Eo-LgM" firstAttribute="centerX" secondItem="ZnG-La-4qc" secondAttribute="centerX" id="6U0-cq-ToS"/>
+                            <constraint firstItem="6Iz-td-5fX" firstAttribute="top" secondItem="nNS-VB-8yT" secondAttribute="bottom" constant="60" id="87K-tc-N0W"/>
                             <constraint firstItem="nNS-VB-8yT" firstAttribute="centerX" secondItem="ZnG-La-4qc" secondAttribute="centerX" id="BST-Qa-Sgc"/>
                             <constraint firstItem="kgY-Eo-LgM" firstAttribute="top" secondItem="ZnG-La-4qc" secondAttribute="top" constant="200" id="Hsk-WC-SHF"/>
-                            <constraint firstItem="sKv-Fw-Yyh" firstAttribute="centerX" secondItem="ZnG-La-4qc" secondAttribute="centerX" id="LPd-Gz-iEG"/>
+                            <constraint firstItem="sKv-Fw-Yyh" firstAttribute="centerX" secondItem="ZnG-La-4qc" secondAttribute="centerX" id="NIt-MH-j6l"/>
+                            <constraint firstItem="sKv-Fw-Yyh" firstAttribute="top" secondItem="6Iz-td-5fX" secondAttribute="bottom" constant="20" id="epK-EP-kJ1"/>
                             <constraint firstItem="nNS-VB-8yT" firstAttribute="top" secondItem="kgY-Eo-LgM" secondAttribute="bottom" constant="20" id="jP2-05-86T"/>
-                            <constraint firstItem="sKv-Fw-Yyh" firstAttribute="top" secondItem="nNS-VB-8yT" secondAttribute="bottom" constant="80" id="zZh-QK-ylP"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="editPasswordButton" destination="6Iz-td-5fX" id="36H-oY-WJF"/>
                         <outlet property="logoutButton" destination="sKv-Fw-Yyh" id="AQH-Wa-bqX"/>
                         <outlet property="userNameLabel" destination="nNS-VB-8yT" id="TUD-vg-wOQ"/>
                     </connections>
@@ -266,6 +282,9 @@
         <image name="logo_apple" width="33.333332061767578" height="33.333332061767578"/>
         <image name="logo_google" width="33.333332061767578" height="33.333332061767578"/>
         <image name="person.fill.questionmark" catalog="system" width="128" height="104"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

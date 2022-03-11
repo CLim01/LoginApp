@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailLoginButton: UIButton!
-    @IBOutlet weak var googleLoginButton: UIButton!
+    @IBOutlet weak var googleLoginButton: GIDSignInButton!
     @IBOutlet weak var appleLoginButton: UIButton!
     
     // MARK: 버튼 UI 설정
@@ -28,10 +29,15 @@ class LoginViewController: UIViewController {
         
         // MARK: 네비게이션바 숨기기
         navigationController?.navigationBar.isHidden = true
+        
+        // MARK: Google Sign In
+        GIDSignIn.sharedInstance().presentingViewController = self
+        
     }
     
     // MARK: Google 버튼 Tap
     @IBAction func tapGoogleLoginButton(_ sender: UIButton) {
+        GIDSignIn.sharedInstance().signIn()
     }
     
     // MARK: Apple 버튼 Tap
